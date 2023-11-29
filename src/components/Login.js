@@ -1,6 +1,11 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidData } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -13,10 +18,50 @@ const Login = () => {
 
   const handleButtonClick = () => {
     // Validate form data
-    const message = checkValidData(email.current.value, password.current.value);
+    const message = checkValidData(
+      email.current.value,
+      password.current.value,
+    );
     setErrorMessage(message);
 
-    // Proceed to sign in or sign up
+    if (message) return;
+
+    // Proceed to Signin or Signup
+    if (!isSignInForm) {
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (errorCode === "auth/email-already-in-use") {
+            setErrorMessage("Email is already registered");
+          }
+        });
+    } else {
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          if (errorCode === "auth/invalid-credential") {
+            setErrorMessage("Invalid credentials");
+          }
+        });
+    }
   };
 
   return (
