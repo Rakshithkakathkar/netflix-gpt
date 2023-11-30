@@ -12,6 +12,9 @@
 - Deploy app to prod
 - Signup user to firebase
 - Signin with logged in user
+- Create redux store with user slice
+- Implemented SignOut
+- Update Profile
 
 # Features
 
