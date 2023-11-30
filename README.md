@@ -15,6 +15,7 @@
 - Create redux store with user slice
 - Implemented SignOut
 - Update Profile
+- Added constants file
 
 # Features
 
