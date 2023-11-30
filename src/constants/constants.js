@@ -6,7 +6,6 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNjg3MjgzMWFjYjFhNGRhM2VlZTk1N2IxYjZjNjVhOSIsInN1YiI6IjY1NjgxYjdmOWFmZmMwMDE0ZThlZTQwMSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.fDawj2IucTmGNej2zy26wgSqZE5sbhC-F_tNtfqhisk",
+    Authorization: ""
   },
 };
