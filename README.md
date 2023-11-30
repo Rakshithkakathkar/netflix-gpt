@@ -16,6 +16,8 @@
 - Implemented SignOut
 - Update Profile
 - Added constants file
+- Register on TMDB website, create app and get access_token
+- Made movie list api call to get movies and save in store using a custom hook
 
 # Features
 
