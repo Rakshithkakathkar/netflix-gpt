@@ -21,6 +21,8 @@
 - Added MainContainer with Video Background and Title
 - Fetching trailer details using custom hook and save in store
 - Embed video and make it auto play on screen
+- Secondary Container with movie list and cards
+- Custom hook for popular, upcoming, trending and top rated movies
 
 # Features
 
