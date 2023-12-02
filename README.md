@@ -18,6 +18,8 @@
 - Added constants file
 - Register on TMDB website, create app and get access_token
 - Made movie list api call to get movies and save in store using a custom hook
+- Added MainContainer with Video Background and Title
+- Fetching trailer details and video and rendering on screen
 
 # Features
 
@@ -29,8 +31,8 @@
   - Main Movie
     - Trailer
     - Title and Description
-    - Movie Suggestions
-      - Movie List \* n
+  - Movie Suggestions
+      - Movie List * n
 - NetflixGPT page
   - Search Bar
   - Movie Suggestions
