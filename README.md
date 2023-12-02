@@ -28,6 +28,7 @@
 - Add openAi intergration
 - Get movie details from tmdb for the suggestions
 - Show the movie cards using movieCards component
+- Add memoization to reduce api calls on home page
 
 # Features
 
