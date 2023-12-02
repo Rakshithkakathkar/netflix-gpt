@@ -24,6 +24,10 @@
 - Secondary Container with movie list and cards
 - Custom hook for popular, upcoming, trending and top rated movies
 - GPT search feature
+- Add localization for GPT search page
+- Add openAi intergration
+- Get movie details from tmdb for the suggestions
+- Show the movie cards using movieCards component
 
 # Features
 
@@ -37,9 +41,9 @@
     - Title and Description
   - Movie Suggestions
     - Movie List - Popular
-      - Movie Cards * n
+      - Movie Cards \* n
     - Moive List - Trending
-      - Movie Cards * n 
+      - Movie Cards \* n
 - NetflixGPT page
   - Search Bar
   - Movie Suggestions
