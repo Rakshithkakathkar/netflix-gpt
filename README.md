@@ -23,6 +23,7 @@
 - Embed video and make it auto play on screen
 - Secondary Container with movie list and cards
 - Custom hook for popular, upcoming, trending and top rated movies
+- GPT search feature
 
 # Features
 
