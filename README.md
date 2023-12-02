@@ -20,7 +20,7 @@
 - Made movie list api call to get movies and save in store using a custom hook
 - Added MainContainer with Video Background and Title
 - Fetching trailer details using custom hook and save in store
-- Ember video and make it auto play
+- Embed video and make it auto play on screen
 
 # Features
 
@@ -33,7 +33,10 @@
     - Trailer
     - Title and Description
   - Movie Suggestions
-    - Movie List \* n
+    - Movie List - Popular
+      - Movie Cards * n
+    - Moive List - Trending
+      - Movie Cards * n 
 - NetflixGPT page
   - Search Bar
   - Movie Suggestions
