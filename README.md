@@ -27,8 +27,11 @@
 - Add localization for GPT search page
 - Add openAi intergration
 - Get movie details from tmdb for the suggestions
+- Created GPT slice
 - Show the movie cards using movieCards component
 - Add memoization to reduce api calls on home page
+- Added .env file
+- Responsive for mobile
 
 # Features
 
