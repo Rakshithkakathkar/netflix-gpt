@@ -5,7 +5,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../redux/slice/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../constants/constants";
-import { toggleGptSearchView } from "../redux/slice/gptSlice";
+import {
+  removeGPTMovieResults,
+  toggleGptSearchView,
+} from "../redux/slice/gptSlice";
 import { changeLanguage } from "../redux/slice/configSlice";
 
 const Header = () => {
@@ -52,6 +55,7 @@ const Header = () => {
       } else {
         // User is signed out
         dispatch(removeUser());
+        dispatch(removeGPTMovieResults());
         navigate("/");
       }
     });

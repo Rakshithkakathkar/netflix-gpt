@@ -18,3 +18,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hi", name: "हिंदी" },
 ];
 export const OPENAI_KEY = process.env.REACT_APP_OPENAI_KEY;
+export const DEMO_EMAIL = process.env.REACT_APP_DEMO_EMAILID
+export const DEMO_PASSWORD = process.env.REACT_APP_DEMO_PASSWORD

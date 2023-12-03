@@ -9,7 +9,12 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/slice/userSlice";
-import { BACKGROUND_IMG, USER_AVATAR } from "../constants/constants";
+import {
+  BACKGROUND_IMG,
+  DEMO_EMAIL,
+  DEMO_PASSWORD,
+  USER_AVATAR,
+} from "../constants/constants";
 const Login = () => {
   const dispatch = useDispatch();
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -68,23 +73,27 @@ const Login = () => {
           }
         });
     } else {
-      signInWithEmailAndPassword(
-        auth,
-        email.current.value,
-        password.current.value
-      )
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          if (errorCode === "auth/invalid-credential") {
-            setErrorMessage("Invalid credentials");
-          }
-        });
+      signIn(email.current.value, password.current.value);
     }
+  };
+
+  const handleDemoUserClick = () => {
+    return signIn(DEMO_EMAIL, DEMO_PASSWORD);
+  };
+
+  const signIn = (email, password) => {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        if (errorCode === "auth/invalid-credential") {
+          setErrorMessage("Invalid credentials");
+        }
+      });
   };
 
   return (
@@ -131,6 +140,14 @@ const Login = () => {
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
+        {isSignInForm && (
+          <button
+            className="p-4 bg-red-700 w-full rounded-lg"
+            onClick={handleDemoUserClick}
+          >
+            Try Demo
+          </button>
+        )}
         <p className="py-4 cursor-pointer" onClick={toggleSigninInForm}>
           {isSignInForm
             ? "New to Netflix? Sign up now"
